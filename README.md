@@ -1,66 +1,32 @@
-## Foundry
+# Decentralized Lottery Smart Contract with Provably Random Draws
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Overview
+This repository contains Solidity code for a decentralized lottery smart contract that ensures provably random draws. The implementation utilizes Solidity, Foundry, Chainlink VRF (Verifiable Random Function), and Chainlink Automation for secure and transparent lottery operations.
 
-Foundry consists of:
+## Features
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+1. **Ticket Entry System:**
+   - Users can participate in the lottery by purchasing tickets.
+   - Ticket fees contribute to the prize pool for the eventual winner.
 
-## Documentation
+2. **Automated Draw:**
+   - The lottery automatically selects a winner after a specified period (X) of time.
+   - The draw process is executed programmatically for transparency and fairness.
 
-https://book.getfoundry.sh/
+3. **Chainlink VRF for Randomness:**
+   - Utilizes Chainlink VRF to ensure verifiable randomness in the selection of the winner.
+   - This adds an extra layer of security and trust to the lottery process.
 
-## Usage
+4. **Chainlink Automation for Time-Based Trigger:**
+   - Chainlink Automation is employed to trigger the draw based on a predefined time.
+   - This enhances the efficiency of the lottery system by automating the draw process.
 
-### Build
+## How it Works
 
-```shell
-$ forge build
-```
+1. Users purchase lottery tickets by sending the required fees to the smart contract.
+2. The lottery smart contract accumulates the ticket fees, forming the prize pool.
+3. After the specified time period (X), Chainlink Automation triggers the lottery draw.
+4. Chainlink VRF generates a random number to determine the winner.
+5. The winner is announced, and the prize pool is transferred to their address.
 
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+This implementation ensures a secure, transparent, and decentralized lottery experience. Feel free to explore the code and contribute to its improvement!
